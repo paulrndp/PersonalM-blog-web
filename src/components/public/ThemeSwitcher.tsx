@@ -72,6 +72,15 @@ export function ThemeSwitcher({ inline = false }: { inline?: boolean }) {
       document.documentElement.setAttribute("data-theme", "light");
     }
 
+    // Sync theme changes across all switcher instances
+    const handleThemeEvent = (event: Event) => {
+      const customEvent = event as CustomEvent<ThemeId>;
+      if (customEvent.detail && THEME_OPTIONS.some((t) => t.id === customEvent.detail)) {
+        setCurrentTheme(customEvent.detail);
+      }
+    };
+    window.addEventListener("personalm-theme-change", handleThemeEvent);
+
     // Close dropdown when clicking outside
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -79,13 +88,18 @@ export function ThemeSwitcher({ inline = false }: { inline?: boolean }) {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("personalm-theme-change", handleThemeEvent);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const handleSelectTheme = (id: ThemeId) => {
     setCurrentTheme(id);
     localStorage.setItem("personalm_theme", id);
     document.documentElement.setAttribute("data-theme", id);
+    window.dispatchEvent(new CustomEvent("personalm-theme-change", { detail: id }));
     setIsOpen(false);
   };
 

@@ -117,9 +117,10 @@ export function NavbarClient({ session }: { session: any }) {
   // Signature Full Layout for Public Pages
   return (
     <header
-      className="w-full transition-colors duration-250 pt-4 sm:pt-6 pb-2"
+      className="w-full transition-colors duration-250 pt-4 sm:pt-6 pb-2 border-b"
       style={{
-        backgroundColor: "var(--bg-page)",
+        backgroundColor: "var(--bg-subtle)",
+        borderColor: "var(--border-main)",
       }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

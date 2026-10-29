@@ -115,11 +115,11 @@
 }
 
 [data-theme="rose"] {
-  --bg-page: #fff5f7;
+  --bg-page: #fff0f3;
   --bg-card: #ffffff;
   --bg-subtle: #ffe4e9;
-  --text-main: #3b141e;
-  --text-muted: #881337;
+  --text-main: #4c0519;
+  --text-muted: #9f1239;
   --text-faint: #f43f5e;
   --border-main: #fecdd3;
   --border-light: #ffe4e6;
@@ -130,14 +130,14 @@
 }
 
 [data-theme="lavender"] {
-  --bg-page: #faf7fd;
+  --bg-page: #f8f4fe;
   --bg-card: #ffffff;
-  --bg-subtle: #f3e8ff;
+  --bg-subtle: #ede9fe;
   --text-main: #2e1065;
-  --text-muted: #5b21b6;
+  --text-muted: #6b21a8;
   --text-faint: #8b5cf6;
-  --border-main: #e9d5ff;
-  --border-light: #f3e8ff;
+  --border-main: #ddd6fe;
+  --border-light: #ede9fe;
   --accent-main: #7c3aed;
   --accent-hover: #6d28d9;
   --accent-subtle: #ede9fe;
@@ -145,7 +145,7 @@
 }
 
 [data-theme="peach"] {
-  --bg-page: #fffaf5;
+  --bg-page: #fff6ee;
   --bg-card: #ffffff;
   --bg-subtle: #ffedd5;
   --text-main: #431407;
@@ -166,7 +166,7 @@ body {
 }
 
 header {
-  background-color: var(--bg-page) !important;
+  background-color: var(--bg-subtle) !important;
   transition: background-color 0.25s ease;
 }
 

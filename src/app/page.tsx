@@ -17,7 +17,13 @@ export default async function HomePage() {
   return (
     <div className="space-y-20 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-stone-100/80 to-transparent border-b border-stone-200/60 pt-16 pb-20">
+      <section
+        className="relative overflow-hidden border-b transition-colors duration-250 pt-16 pb-20"
+        style={{
+          background: "linear-gradient(180deg, var(--bg-subtle) 0%, var(--bg-page) 100%)",
+          borderColor: "var(--border-main)",
+        }}
+      >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg shrink-0 bg-stone-200">
