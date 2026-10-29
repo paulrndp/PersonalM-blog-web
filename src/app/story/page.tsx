@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getStories } from "@/actions/stories";
 import { Layers, Eye, BookOpen, ArrowRight } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Stories | Hannah Montemayor",
   description: "Browse original fiction, novels, and serialized chapters.",

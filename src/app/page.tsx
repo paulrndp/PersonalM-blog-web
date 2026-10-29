@@ -4,7 +4,7 @@ import { getPosts } from "@/actions/posts";
 import { getAccountProfile } from "@/actions/account";
 import { BookOpen, Sparkles, Feather, ArrowRight, Eye, Layers } from "lucide-react";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const [stories, recentPosts, randomPosts, profile] = await Promise.all([

@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getPosts } from "@/actions/posts";
 import { ArrowRight, Eye, Calendar, BookOpen } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Blog | Hannah Montemayor",
   description: "Read articles, reflections, and insights by Hannah Montemayor.",

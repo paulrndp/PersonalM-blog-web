@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getPosts } from "@/actions/posts";
 import { Sparkles, Eye, Calendar, ArrowRight } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Random Thoughts | Hannah Montemayor",
   description: "Casual thoughts, musings, and momentary reflections.",
