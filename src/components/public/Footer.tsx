@@ -1,6 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const pathname = usePathname();
+
+  // Hide the public footer on admin dashboard routes to maximize workspace space
+  if (pathname.startsWith("/admin")) {
+    return null;
+  }
+
   const currentYear = new Date().getFullYear();
 
   return (
