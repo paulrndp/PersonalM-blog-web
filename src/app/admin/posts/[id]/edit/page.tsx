@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { updatePost } from "@/actions/posts";
 import { ArrowLeft, Save, Send } from "lucide-react";
+import WYSIWYGEditor from "@/components/admin/WYSIWYGEditor";
 
 export default async function EditPostPage(props: {
   params: Promise<{ id: string }>;
@@ -89,18 +90,14 @@ export default async function EditPostPage(props: {
             </div>
           </div>
 
-          <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-stone-700 block">
-              Post Content (HTML or plain text)
-            </label>
-            <textarea
-              name="content"
-              rows={14}
-              required
-              defaultValue={post.content || ""}
-              className="w-full px-4 py-3 rounded-lg border border-stone-300 text-sm font-sans focus:outline-none focus:ring-2 focus:ring-amber-800/30 focus:border-amber-800"
-            />
-          </div>
+          <WYSIWYGEditor
+            name="content"
+            defaultValue={post.content || ""}
+            label="Post Content (Rich Text / WYSIWYG)"
+            placeholder="Write your article or reflection here... Use the toolbar above for rich formatting."
+            minHeight="350px"
+            required
+          />
         </div>
 
         <div className="flex items-center justify-end gap-3">

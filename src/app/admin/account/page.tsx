@@ -3,6 +3,7 @@ import { requireAuth } from "@/lib/auth";
 import { User, Save, Lock, FileText, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import WYSIWYGEditor from "@/components/admin/WYSIWYGEditor";
 
 export default async function AdminAccountPage() {
   await requireAuth();
@@ -109,18 +110,13 @@ export default async function AdminAccountPage() {
           </div>
 
           {/* Bio / Description */}
-          <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-stone-700 block">
-              Bio / About Me Description
-            </label>
-            <textarea
-              name="desc"
-              rows={4}
-              defaultValue={profile?.desc || ""}
-              placeholder="Introduce yourself to your readers..."
-              className="w-full px-3 py-2.5 rounded-lg border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-amber-800/30 focus:border-amber-800"
-            />
-          </div>
+          <WYSIWYGEditor
+            name="desc"
+            defaultValue={profile?.desc || ""}
+            label="Bio / About Me Description (Rich Text / WYSIWYG)"
+            placeholder="Introduce yourself to your readers with rich formatting..."
+            minHeight="180px"
+          />
         </div>
 
         <div className="flex items-center justify-end">

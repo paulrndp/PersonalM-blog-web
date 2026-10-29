@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createStory } from "@/actions/stories";
 import { ArrowLeft, Save, Upload } from "lucide-react";
 import { redirect } from "next/navigation";
+import WYSIWYGEditor from "@/components/admin/WYSIWYGEditor";
 
 export default function NewStoryPage() {
   async function handleSubmit(formData: FormData) {
@@ -69,18 +70,13 @@ export default function NewStoryPage() {
             </div>
           </div>
 
-          <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-stone-700 block">
-              Synopsis / Description
-            </label>
-            <textarea
-              name="desc"
-              rows={4}
-              required
-              placeholder="Describe the storyline, premise, or introduction..."
-              className="w-full px-4 py-2.5 rounded-lg border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-amber-800/30 focus:border-amber-800"
-            />
-          </div>
+          <WYSIWYGEditor
+            name="desc"
+            label="Synopsis / Description (Rich Text / WYSIWYG)"
+            placeholder="Describe the storyline, premise, or introduction... Rich text formatting supported."
+            minHeight="180px"
+            required
+          />
 
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-stone-700 block">

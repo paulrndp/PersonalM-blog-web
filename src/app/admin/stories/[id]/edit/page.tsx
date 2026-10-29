@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { updateStory } from "@/actions/stories";
 import { ArrowLeft, Save } from "lucide-react";
+import WYSIWYGEditor from "@/components/admin/WYSIWYGEditor";
 
 export default async function EditStoryPage(props: {
   params: Promise<{ id: string }>;
@@ -82,18 +83,14 @@ export default async function EditStoryPage(props: {
             </div>
           </div>
 
-          <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-stone-700 block">
-              Synopsis / Description
-            </label>
-            <textarea
-              name="desc"
-              rows={4}
-              required
-              defaultValue={story.desc}
-              className="w-full px-4 py-2.5 rounded-lg border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-amber-800/30 focus:border-amber-800"
-            />
-          </div>
+          <WYSIWYGEditor
+            name="desc"
+            defaultValue={story.desc}
+            label="Synopsis / Description (Rich Text / WYSIWYG)"
+            placeholder="Describe the storyline, premise, or introduction... Rich text formatting supported."
+            minHeight="180px"
+            required
+          />
 
           <div className="space-y-3">
             <label className="text-xs font-semibold text-stone-700 block">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { getStoryWithChapters, createChapter, deleteChapter } from "@/actions/stories";
 import { ArrowLeft, PlusCircle, Trash2, Layers, Eye, BookOpen, Send } from "lucide-react";
+import WYSIWYGEditor from "@/components/admin/WYSIWYGEditor";
 
 export default async function AdminStoryChaptersPage(props: {
   params: Promise<{ id: string }>;
@@ -149,18 +150,13 @@ export default async function AdminStoryChaptersPage(props: {
               />
             </div>
 
-            <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-stone-700 block">
-                Chapter Content (HTML / Text)
-              </label>
-              <textarea
-                name="content"
-                rows={12}
-                required
-                placeholder="Write or paste your chapter text here..."
-                className="w-full px-3 py-2 rounded-lg border border-stone-300 text-xs font-sans focus:outline-none focus:ring-2 focus:ring-amber-800/30 focus:border-amber-800"
-              />
-            </div>
+            <WYSIWYGEditor
+              name="content"
+              label="Chapter Content (Rich Text / WYSIWYG)"
+              placeholder="Write or format your serialized chapter text here..."
+              minHeight="300px"
+              required
+            />
 
             <button
               type="submit"
