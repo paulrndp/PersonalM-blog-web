@@ -32,7 +32,13 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#faf9f6] text-stone-800 antialiased selection:bg-amber-100 selection:text-amber-900">
+      <body
+        className="min-h-screen flex flex-col antialiased transition-colors duration-250 selection:bg-amber-100 selection:text-amber-900"
+        style={{
+          backgroundColor: "var(--bg-page)",
+          color: "var(--text-main)",
+        }}
+      >
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

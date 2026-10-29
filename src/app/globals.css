@@ -170,6 +170,21 @@ header {
   transition: background-color 0.25s ease;
 }
 
+/* Navigation theme rules */
+.nav-theme-link {
+  color: var(--text-muted);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-theme-link:hover {
+  color: var(--accent-main) !important;
+}
+
+.nav-theme-link-active {
+  color: var(--accent-main) !important;
+  font-weight: 600;
+}
+
 /* Dark Mode Overrides */
 [data-theme="dark"] .bg-white {
   background-color: var(--bg-card) !important;
@@ -204,6 +219,12 @@ header {
   border-color: var(--border-light) !important;
 }
 
+[data-theme="dark"] .hover\:text-stone-950:hover,
+[data-theme="dark"] .hover\:text-stone-900:hover,
+[data-theme="dark"] .hover\:text-black:hover {
+  color: var(--accent-main) !important;
+}
+
 [data-theme="dark"] [class*="from-stone-100"] {
   --tw-gradient-from: #181b20 !important;
 }
@@ -232,6 +253,27 @@ header {
 [data-theme="rose"] .bg-stone-100,
 [data-theme="rose"] .bg-stone-50 {
   background-color: var(--bg-subtle) !important;
+}
+
+[data-theme="rose"] .text-stone-900,
+[data-theme="rose"] .text-stone-800 {
+  color: var(--text-main) !important;
+}
+
+[data-theme="rose"] .text-stone-700,
+[data-theme="rose"] .text-stone-600 {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="rose"] .text-stone-500,
+[data-theme="rose"] .text-stone-400 {
+  color: var(--text-faint) !important;
+}
+
+[data-theme="rose"] .hover\:text-stone-950:hover,
+[data-theme="rose"] .hover\:text-stone-900:hover,
+[data-theme="rose"] .hover\:text-black:hover {
+  color: var(--accent-main) !important;
 }
 
 [data-theme="rose"] .border-stone-200,
@@ -288,6 +330,27 @@ header {
   background-color: var(--bg-subtle) !important;
 }
 
+[data-theme="lavender"] .text-stone-900,
+[data-theme="lavender"] .text-stone-800 {
+  color: var(--text-main) !important;
+}
+
+[data-theme="lavender"] .text-stone-700,
+[data-theme="lavender"] .text-stone-600 {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="lavender"] .text-stone-500,
+[data-theme="lavender"] .text-stone-400 {
+  color: var(--text-faint) !important;
+}
+
+[data-theme="lavender"] .hover\:text-stone-950:hover,
+[data-theme="lavender"] .hover\:text-stone-900:hover,
+[data-theme="lavender"] .hover\:text-black:hover {
+  color: var(--accent-main) !important;
+}
+
 [data-theme="lavender"] .border-stone-200,
 [data-theme="lavender"] .border-stone-300 {
   border-color: var(--border-main) !important;
@@ -340,6 +403,27 @@ header {
 [data-theme="peach"] .bg-stone-100,
 [data-theme="peach"] .bg-stone-50 {
   background-color: var(--bg-subtle) !important;
+}
+
+[data-theme="peach"] .text-stone-900,
+[data-theme="peach"] .text-stone-800 {
+  color: var(--text-main) !important;
+}
+
+[data-theme="peach"] .text-stone-700,
+[data-theme="peach"] .text-stone-600 {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="peach"] .text-stone-500,
+[data-theme="peach"] .text-stone-400 {
+  color: var(--text-faint) !important;
+}
+
+[data-theme="peach"] .hover\:text-stone-950:hover,
+[data-theme="peach"] .hover\:text-stone-900:hover,
+[data-theme="peach"] .hover\:text-black:hover {
+  color: var(--accent-main) !important;
 }
 
 [data-theme="peach"] .border-stone-200,
