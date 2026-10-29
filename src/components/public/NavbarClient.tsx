@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export function NavbarClient({ session }: { session: any }) {
   const pathname = usePathname();
@@ -21,7 +22,7 @@ export function NavbarClient({ session }: { session: any }) {
               <img
                 src="/images/logo-hannahm.png"
                 alt="hannah m."
-                className="h-8 w-auto object-contain"
+                className="h-8 w-auto object-contain theme-logo-invert"
               />
               <span className="text-[10px] font-sans font-semibold tracking-wider text-amber-900 uppercase bg-amber-50 px-2 py-0.5 rounded border border-amber-200/50">
                 admin mode
@@ -48,6 +49,7 @@ export function NavbarClient({ session }: { session: any }) {
           </div>
 
           <div className="flex items-center space-x-4 text-xs font-sans font-normal tracking-normal">
+            <ThemeSwitcher inline />
             <Link
               href="/admin"
               className="lowercase font-semibold text-amber-800 hover:text-amber-950 transition-colors"
@@ -101,7 +103,7 @@ export function NavbarClient({ session }: { session: any }) {
               <img
                 src="/images/logo-hannahm.png"
                 alt="hannah m."
-                className="w-28 sm:w-32 lg:w-36 h-auto object-contain transition duration-300 group-hover:opacity-90 group-hover:scale-[1.02]"
+                className="w-28 sm:w-32 lg:w-36 h-auto object-contain transition duration-300 group-hover:opacity-90 group-hover:scale-[1.02] theme-logo-invert"
               />
             </Link>
           </div>
@@ -135,6 +137,7 @@ export function NavbarClient({ session }: { session: any }) {
                 sign in
               </Link>
             )}
+            <ThemeSwitcher inline />
           </nav>
         </div>
 
@@ -151,7 +154,7 @@ export function NavbarClient({ session }: { session: any }) {
             <img
               src="/images/logo-hannahm.png"
               alt="hannah m."
-              className="w-28 h-auto object-contain mx-auto transition duration-300 group-hover:opacity-90"
+              className="w-28 h-auto object-contain mx-auto transition duration-300 group-hover:opacity-90 theme-logo-invert"
             />
           </Link>
 
@@ -190,6 +193,7 @@ export function NavbarClient({ session }: { session: any }) {
                 sign in
               </Link>
             )}
+            <ThemeSwitcher inline />
           </nav>
         </div>
       </div>
